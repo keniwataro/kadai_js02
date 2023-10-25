@@ -51,6 +51,8 @@ function chkMaru(iptTxt){
             origin: { y: 0 }
         });
 
+        // 正解音発動
+        successMusic();
 
         //時間取得
         let date = new Date();
@@ -70,7 +72,6 @@ function chkMaru(iptTxt){
 
         // 次の単語へボタンにフォーカス
         $("#nextWordBtn").focus();
-
 
     }
     // 間違っている場合
@@ -174,6 +175,20 @@ function showTable(nowList){
     
     }
 
+}
+
+// 正解音を出す関数
+function addMelodyA(time, note) {
+    let melody_synthA = new Tone.PolySynth().toMaster();
+    melody_synthA.triggerAttackRelease(note, '8n', time);
+}
+function successMusic(){
+    const maru =  [[null,'E5','C5',null]];
+    let melody_effect = new Tone.Sequence(addMelodyA, maru).start();
+
+    melody_effect.loop = false;
+    Tone.Transport.bpm.value = 200;
+    Tone.Transport.start();
 }
 
 
