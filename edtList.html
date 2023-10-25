@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+
+        <!-- スニペット -->
+        <meta name="description" content="単語カードのアプリです。自分で単語登録して勉強することができます。">
+
+        <!-- Open Graph Protcol -->
+        <meta property="og:url" content="http://iwasakigs.sakura.ne.jp/wordstudy/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="単語カードアプリ">
+        <meta property="og:description" content=" 単語カードのアプリです。自分で単語登録して勉強することができます。">
+        <meta property="og:site_name" content="単語カードアプリ">
+        <meta property="og:image" content="http://iwasakigs.sakura.ne.jp/wordstudy/img/wordStudyFavicon.png">
+
+        <!-- jQueryの元データ -->
+        <script src="js/jquery-2.1.3.min.js"></script>
+
+        <!-- CSSをリセットして自分で設定したCSSを適用 -->
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <!-- タイトル -->
+        <title>編集画面：単語カードアプリ</title>
+        <!-- ファビコン -->
+        <link rel="icon" href="./img/wordStudyFavicon.png">
+
+    </head>
+    <body>
+        <div class="main">
+            
+            <!-- タイトル -->
+            <h1>単語カードアプリ２</h1>
+
+
+            <!----------- 単語帳編集画面 ------------->
+            <div id="edit_page">
+
+                <div class="edit_main_btns">
+                    <button id="edit_add_btn">単語を追加する</button>
+                    <button id="back_main_btn">メイン画面に戻る</button>
+                </div>
+
+                <h2 id="notList">単語が登録されていません！</h2>
+
+                <div class="edit_space">
+
+                    <div class="edtWord_box" id="edtWord_box1">
+                        <div class="edtWord_box_ipts">
+                            <p id="edtWord_box_nmb1">１個目</p>
+                            <div>単語<input id="edit_word_ipt1" type="text"></div>
+                            <div>意味<input id="edit_mean_ipt1" type="text"></div>
+                        </div>
+    
+                        <div class="edtWord_box_btns">
+                            <button class="change_word_btn" id="change_word_btn1">変更</button>
+                            <button class="delete_word_btn" id="delete_word_btn1">削除</button>
+                        </div>
+                    </div>
+    
+                    <div class="edtWord_box" id="edtWord_box2">
+                        <div class="edtWord_box_ipts">
+                            <p id="edtWord_box_nmb2">２個目</p>
+                            <div>単語<input id="edit_word_ipt2" type="text"></div>
+                            <div>意味<input id="edit_mean_ipt2" type="text"></div>
+                        </div>
+    
+                        <div class="edtWord_box_btns">
+                            <button class="change_word_btn" id="change_word_btn2">変更</button>
+                            <button class="delete_word_btn" id="delete_word_btn2">削除</button>
+                        </div>
+                    </div>
+    
+                    <div class="edtWord_box"  id="edtWord_box3">
+                        <div class="edtWord_box_ipts">
+                            <p id="edtWord_box_nmb3">３個目</p>
+                            <div>単語<input id="edit_word_ipt3" type="text"></div>
+                            <div>意味<input id="edit_mean_ipt3" type="text"></div>
+                        </div>
+    
+                        <div class="edtWord_box_btns">
+                            <button class="change_word_btn" id="change_word_btn3">変更</button>
+                            <button class="delete_word_btn" id="delete_word_btn3">削除</button>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+
+                <div class="changepage">
+                    <img id="back_table_btn" src="./img/backTable.png" alt="前への画像">
+                    <img id="next_table_btn" src="./img/nextTable.png" alt="次への画像">
+                </div>
+
+            </div>
+
+            <!--------- //単語帳編集画面// ----------->
+
+
+
+            <!----------- 単語追加画面 ------------->
+            <div id="edit_add_page">
+                <!-- サブタイトル -->
+                <h2>単語を登録！</h2>
+                
+                <!-- 入力項目 -->
+                <table>
+                    <tr>
+                        <th>登録する単語</th>
+                        <td><input id="add_word" type="text" onblur="chkInput(this)" oninput="chkInput(this)"></td>
+                    </tr>
+                    <tr>
+                        <th>意味</th>
+                        <td><input id="add_mean" type="text" onblur="chkInput(this)" oninput="chkInput(this)"></td>
+                    </tr>
+                </table>
+
+                <!-- 登録ボタン -->
+                <button id="add_word_btn">登録！</button>
+                <!-- 修了ボタン -->
+                <button id="edit_add_end">前の画面に戻る</button>
+
+            </div>
+            <!---------- //単語追加画面// ------------->
+
+
+            <!-- いらないかもしれないがとりあえずフッター設置 -->
+            <footer>
+                <p></p>
+            </footer>
+
+        </div>
+
+
+        <!-- 紙吹雪用JavaScriptライブラリ(canvas confetti) -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js"></script>
+        <!-- 独自で作成しているjsファイル -->
+        <script src="./js/main.js"></script>
+    </body>
+</html>

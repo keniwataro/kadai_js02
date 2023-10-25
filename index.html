@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+
+        <!-- スニペット -->
+        <meta name="description" content="単語カードのアプリです。自分で単語登録して勉強することができます。">
+
+        <!-- Open Graph Protcol -->
+        <meta property="og:url" content="http://iwasakigs.sakura.ne.jp/wordstudy/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="単語カードアプリ">
+        <meta property="og:description" content=" 単語カードのアプリです。自分で単語登録して勉強することができます。">
+        <meta property="og:site_name" content="単語カードアプリ">
+        <meta property="og:image" content="http://iwasakigs.sakura.ne.jp/wordstudy/img/wordStudyFavicon.png">
+
+        <!-- jQueryの元データ -->
+        <script src="js/jquery-2.1.3.min.js"></script>
+
+        <!-- CSSをリセットして自分で設定したCSSを適用 -->
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <!-- タイトル -->
+        <title>単語カードアプリ</title>
+        <!-- ファビコン -->
+        <link rel="icon" href="./img/wordStudyFavicon.png">
+
+    </head>
+    <body>
+        <div class="main">
+            
+            <!-- タイトル -->
+            <h1>単語カードアプリ２</h1>
+
+
+            <!------------- メイン画面 ------------->
+            <div id="main">
+                <!-- タイトル画像 -->
+                <img id="title_img" src="./img/wordCard.png" alt="単語カードの画像">
+
+                <!-- 初期選択ボタン -->
+                <div id="main_buttons">
+                    <button id="start">単語を覚える！</button>
+                    <button id="add">単語帳を編集</button>
+                </div>
+            </div>
+            <!---------- //メイン画面// ------------>
+
+
+
+            <!-------------- 勉強画面 ----------------->
+            <div id="study_page">
+
+                <!-- 登録してない場合 -->
+                <h2 id="notStudy">単語が登録されていません！</h2>
+
+                <!-- 赤丸gif用のグループ -->
+                <div id="akamaruDiv"></div>
+
+                <!-- 解答場所の大枠 -->
+                <div class="study_box">
+                    <!-- 解答場所 -->
+                    <div id="study_div">
+
+                        <!-- 解答入力場所 -->
+                        <h2 id="studyWord">単語</h2>
+                        <p><input type="text" id="iptWord" onchange="chkMaru(this)"></p>
+                        <button id="ansWordBtn">答えを見る</button>
+                        <h2 class="red_bgc" id="ansWord">答え：</h2>
+                        <button id="nextWordBtn">次の単語へ</button>
+
+                    </div>
+
+                </div>
+
+                <button id="study_end">最初の画面に戻る</button>
+
+            </div>
+            <!---------- //勉強画面// ------------>
+
+
+
+            <!-- いらないかもしれないがとりあえずフッター設置 -->
+            <footer>
+                <p></p>
+            </footer>
+
+        </div>
+
+
+        <!-- 紙吹雪用JavaScriptライブラリ(canvas confetti) -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js"></script>
+        <!-- 独自で作成しているjsファイル -->
+        <script src="./js/main.js"></script>
+    </body>
+</html>
