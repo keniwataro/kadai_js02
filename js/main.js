@@ -137,6 +137,8 @@ function showTable(nowList){
 
     }else{
         $("#notList").hide(10);
+        $(".edit_space").show(10);
+
     }
 
     //最初or最後のページの場合、ボタン非表示
@@ -403,14 +405,13 @@ $("#edit_add_end").on("click",function () {
     $("#add_word").val("").removeClass("red_bgc");
     $("#add_mean").val("").removeClass("red_bgc");
 
-    // リスト表示
-    nowList = 0;
-    showTable(nowList);
-
     //単語編集画面に戻る
     $("#edit_add_page").hide(20);
     $("#edit_page").show(20);
 
+    // リスト表示
+    nowList = 0;
+    showTable(nowList);
 });
 
 
